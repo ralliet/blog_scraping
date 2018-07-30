@@ -1,8 +1,6 @@
 import requests 
 from bs4 import BeautifulSoup
-from pprint import pprint
 from csv import writer
-
 
 # Request to get sampleblog html
 urlBlog = "http://codedemos.com/sampleblog/"
@@ -11,6 +9,8 @@ response = requests.get(urlBlog)
 soup = BeautifulSoup(response.text ,'html.parser')
 posts = soup.find_all(class_='post-preview')
 
+# open posts.csv file in write mode
+# newline='' otherwise windows automatically adds an extra newline on "writerow"
 with open('posts.csv','w', newline='') as csv_file:
     csv_writer = writer(csv_file)
     # add headers
