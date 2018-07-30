@@ -1,0 +1,1 @@
+urlBlog = "http://codedemos.com/sampleblog/"
